@@ -1,0 +1,85 @@
+.blog-content {
+  background: #f0f6ff; /* light blue background */
+  padding: 2rem;
+  min-height: 100vh; /* fill remaining page height */
+  box-sizing: border-box;
+  min-width: 80vw;
+}
+
+.blog-content input[type="text"] {
+  width: 100%;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border: 2px solid #cfe0ff;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #1a3c70;
+  margin-bottom: 1rem;
+  outline: none;
+  transition: 0.2s;
+}
+
+.blog-content input[type="text"]:focus {
+  border-color: #5a9bff;
+  box-shadow: 0 0 6px rgba(90,155,255,0.5);
+}
+
+.blog-content textarea {
+  width: 100%;
+  height: 60vh; /* takes at least half screen height */
+  padding: 1rem;
+  font-size: 1rem;
+  border: 2px solid #cfe0ff;
+  border-radius: 0.5rem;
+  background: #ffffff;
+  color: #1a3c70;
+  outline: none;
+  resize: vertical;
+  transition: 0.2s;
+}
+
+.blog-content textarea:focus {
+  border-color: #5a9bff;
+  box-shadow: 0 0 6px rgba(90,155,255,0.5);
+}
+
+.blog-content hr {
+  border: none;
+  border-top: 2px solid #cfe0ff;
+  margin: 1.5rem 0;
+}
+
+.blog-content .btn {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+.blog-content .btn button {
+  flex: 1;
+  padding: 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.blog-content #update {
+  background: #5a9bff;
+  color: white;
+}
+
+.blog-content #update:hover {
+  background: #3c7de6;
+}
+
+.blog-content #delete {
+  background: #ff6b6b;
+  color: white;
+}
+
+.blog-content #delete:hover {
+  background: #e64c4c;
+}

@@ -1,0 +1,163 @@
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', 'Segoe UI', sans-serif;
+    line-height: 1.6;
+    color: #2c3e50;
+    background-color: #f9fbf8;
+    padding: 20px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* Header */
+header {
+    background-color: #2e7d32;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    border-radius: 12px 12px 0 0;
+}
+
+header img {
+    width: 24px;
+    height: 24px;
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    cursor: pointer;
+}
+
+header h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+/* Blog container */
+.blog-container {
+    background: #fff;
+    padding: 25px;
+    border-radius: 0 0 12px 12px;
+    box-shadow: 0 6px 16px rgba(46, 125, 50, 0.1);
+}
+
+.blog-container h3 {
+    font-size: 1.6rem;
+    color: #1b5e20;
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.blog-container p {
+    margin-bottom: 20px;
+    line-height: 1.7;
+    color: #424242;
+    white-space: pre-wrap; /* keep spacing like textarea */
+}
+
+/* Comment Section */
+#comments {
+    margin-top: 30px;
+}
+
+.comment {
+    margin-bottom: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background-color: #f1f8f6;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.comment-author {
+    font-weight: bold;
+    color: #1b5e20;
+}
+
+.comment-date {
+    font-size: 0.9rem;
+    color: #777;
+    margin-bottom: 8px;
+}
+
+.comment-text {
+    margin-bottom: 10px;
+}
+
+.comment a {
+    color: #4caf50;
+    font-size: 0.9rem;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.comment a:hover {
+    text-decoration: underline;
+    color: #2e7d32;
+}
+
+/* Leave Comment Button */
+#leaveCommentBtn {
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    margin-top: 15px;
+}
+
+#leaveCommentBtn:hover {
+    background-color: #388e3c;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Comment Form */
+form {
+    display: none; /* hidden by default */
+    margin-top: 20px;
+    padding: 20px;
+    background: #f9fbf8;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+form input, form textarea {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+form button {
+    background-color: #2e7d32;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+form button:hover {
+    background-color: #1b5e20;
+}

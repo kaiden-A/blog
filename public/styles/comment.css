@@ -1,0 +1,180 @@
+/* Head Section (Title + Update Button in one row) */
+.head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+    gap: 1rem;
+    flex-wrap: nowrap;
+}
+
+.head h2 {
+    color: var(--dark-blue);
+    font-weight: 700;
+    font-size: 1.2rem;
+
+    /* truncate long titles */
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    flex: 1; /* take remaining space */
+    min-width: 0; /* important for truncation inside flex */
+}
+
+.head button {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.head button:hover {
+    background: var(--dark-blue);
+}
+
+/* Divider */
+.content hr {
+    border: none;
+    height: 1px;
+    background-color: var(--gray-border);
+    margin: 0 auto 1rem;
+    max-width: 900px;
+}
+
+/* Comment Section */
+.comment {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+    max-width: 900px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+/* Comment Card */
+.comment-card {
+    background: #f9f9f9;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 1rem;
+}
+
+/* Author + Text (left side stacked) */
+.comment-card div:first-child {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    overflow: hidden;
+    min-width: 0; /* so ellipsis works */
+}
+
+.comment-card #author {
+    font-weight: 600;
+    color: var(--dark-blue);
+    font-size: 0.85rem;
+    margin-bottom: 0.3rem;
+}
+
+.comment-card #text {
+    color: #333;
+    font-size: 0.95rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* Delete Button (right side) */
+.comment-card button {
+    background: #e63946;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s;
+    flex-shrink: 0;
+}
+
+.comment-card button:hover {
+    background: #b71c1c;
+}
+
+/* Empty State */
+.no-comment {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-top: 2rem;
+    font-size: 0.95rem;
+}
+
+/* ---------- Responsive Design ---------- */
+
+/* Tablet */
+@media (max-width: 768px) {
+    .head {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.5rem;
+    }
+
+    .head h2 {
+        white-space: normal; /* allow wrapping */
+        text-overflow: clip;
+    }
+
+    .head button {
+        align-self: flex-end;
+    }
+
+    .comment-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .comment-card button {
+        align-self: flex-end;
+        margin-top: 0.5rem;
+    }
+
+    .comment-card #text {
+        white-space: normal; /* allow wrapping */
+    }
+}
+
+/* Mobile */
+@media (max-width: 480px) {
+    .head {
+        padding: 0.6rem;
+    }
+
+    .head h2 {
+        font-size: 1rem;
+    }
+
+    .head button {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+
+    .comment-card {
+        padding: 0.6rem;
+    }
+
+    .comment-card #text {
+        font-size: 0.85rem;
+    }
+}

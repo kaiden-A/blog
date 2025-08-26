@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SignIn</title>
+
+    <link rel="stylesheet" href="/styles/sign.css">
+</head>
+<body>
+
+    <div class="container">
+        <div class="header">
+            <h1>Welcome Back</h1>
+            <p>Sign In to access your admin dashboard</p>
+
+        </div>
+    </div>
+
+    <form class="form-container">
+        <label name="email">Email</label>
+        <input type="email" name="email" required>
+
+        <label name="password">password</label>
+        <input type="password" name="password" required>
+
+        <button>Submit</button>
+        <div class="form-footer">
+            <p>didn't have account? <a href="/admin/sign-up">Sign Up</a></p>
+        </div>
+    </form>
+
+
+    <script src="/scripts/signIn.js"></script>
+</body>
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title><%= blog.title %></title>
+    <link rel="stylesheet" href="/styles/blog.css">
+</head>
+<body>
+  <header>
+    <img src="/images/arrowBack.png" onclick="location.assign('/')">
+    <h2>The End Path</h2>
+  </header>
+
+  <div class="blog-container">
+    <h3><%= blog.title %></h3>
+    <p><%= blog.description %></p>
+    <hr>
+
+    <div id="comments">
+      <% if(blog.comments.length > 0 ){ %>
+        <% blog.comments.forEach(comment => { %>
+          <% 
+            const date = new Date(comment.updatedAt);
+            const options = { year: 'numeric', month: 'long', day: '2-digit' };
+            const formattedDate = date.toLocaleDateString('en-US', options);
+          %>
+          <div class="comment">
+            <p class="comment-author"><%= comment.author %></p>
+            <p class="comment-date"><%= formattedDate %></p>
+            <p class="comment-text"><%= comment.text %></p>
+            <a href="#">REPLY</a>
+          </div>
+        <% }) %>
+      <% } %>
+
+      <button id="leaveCommentBtn">Leave a comment</button>
+
+      <form id="commentForm">
+        <input type="text" name="author" id="author" placeholder="Your name">
+        <textarea name="text" id="text" placeholder="Write your comment..."></textarea>
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/scripts/openComment.js"></script>
+
+  <script>
+
+        const commentform = document.getElementById('commentForm');
+
+        const url = location;
+        const path = url.pathname.split('/') ;
+
+        const id = path[1];
+        console.log(id);
+
+        commentform.addEventListener('submit' ,async (e) => {
+
+            e.preventDefault();
+
+            const author = form.author.value;
+            const text = form.text.value;
+
+            console.log('author: ' + author);
+
+            const response = await fetch(`/${id}/comment` , {
+                method: 'POST',
+                headers: {'Content-Type' : 'application/json'},
+                body: JSON.stringify({author , text})
+            })
+
+            const data = await response.json();
+
+            if(data.success){
+                location.assign(`/${id}#comments`);
+                location.reload();
+            }
+        })
+  </script>
+</body>
+</html>

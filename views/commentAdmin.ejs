@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Check comment</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <link rel="stylesheet" href="/styles/comment.css">
+</head>
+<body>
+
+    <%- include('./partials/navigator.ejs') %>
+
+    <div>
+        <div class="head">
+            <h2><%= title  %></h2>
+            <button onclick="location.assign('/admin/update/<%= id %>')">UPDATE</button>
+        </div>
+        <hr>
+        <div class="comment">
+
+            <% if(comments.length >  0){ %>
+
+                <% comments.forEach(comment => { %>
+
+                    <div class="comment-card" data-comment-id="<%= comment._id  %>">
+                        <div>
+                            <p id="author"> <%= comment.author %></p>
+                            <p id="text"> <%= comment.text %></p> 
+                        </div>
+                        <div>
+                            <button class="delete-btn">DELETE</button>
+                        </div>
+
+                    </div>
+
+                <% }) %>
+
+        <% }else{ %>
+
+            <P class="no-comment">There's no comment yet</P>
+
+        <%} %>
+
+        </div>
+    </div>
+    <script src="/scripts/hamburg.js"></script>
+
+    <script>
+
+        const url = location;
+        const path = url.pathname.split('/') ;
+
+        const id = path[3];
+
+        document.querySelectorAll('.delete-btn').forEach( button => {
+
+            button.addEventListener('click' , async (e) => {
+
+                console.log('hello world')
+                const commentCard = e.target.closest('.comment-card');
+                const commentId = commentCard.dataset.commentId;
+                
+                console.log(commentId , id);
+
+                const responses = await fetch(`/admin/comment/delete/${id}/${commentId}` , {
+                    method : 'DELETE',
+                    headers : {'Content-Type' : 'application/json'}
+                })
+
+                const data = await responses.json();
+
+                if(data.success){
+                    location.reload();
+                }
+            })
+        })
+    </script>
+</body>
+</html>

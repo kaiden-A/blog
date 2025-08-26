@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+</head>
+<body>
+
+    <%- include('./partials/navigator.ejs') %>
+    <div class="content">
+        <div class="header">
+           <h1>Welcome Back <%= user.username %></h1> 
+
+           <div>
+                <a href="/admin/logout">log out</a>
+                <p><%= user.email %></p>
+           </div>
+
+        </div>
+        <hr>
+        <div class="blog">
+
+            <% if(blogs.length > 0 ){ %>
+
+                <% blogs.forEach(blog => { %>
+
+                    <%  
+                        const date = new Date(blog.createdAt);
+
+                        const options = { year: 'numeric', month: 'long', day: '2-digit' };
+                        const formattedDate = date.toLocaleDateString('en-US', options); 
+                    %>
+
+                    <div class="blog-card">
+                        <div class="title-preview">
+                           <h3><%= blog.title %></h3> 
+                        </div>
+                        <p><%= formattedDate %></p>
+                        <div class="blog-preview">
+                            <p><%= blog.description %></p>
+                        </div>
+                        <div>
+                            <a href="/admin/comment/<%= blog._id %>"><% blog.comments.length %> comments</a>
+                            <a href="/admin/update/<%= blog._id %>">UPDATE BLOG ></a>
+                        </div>
+                    </div>
+                <% }) %>
+
+
+            <% }else{ %>
+
+                <div class="non-blog">
+                    <p>There's no available blog</p>
+                    <button onclick="location.assign('/admin/post/blog')">Create One</button>
+                </div>
+            <% } %>
+        </div>
+
+    </div>  
+    
+    <script src="/scripts/hamburg.js"></script>
+</body>
+</html>

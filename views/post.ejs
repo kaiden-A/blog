@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>create new post</title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <link rel="stylesheet" href="/styles/post.css">
+</head>
+<body>
+
+    <%- include('./partials/navigator.ejs') %>
+
+    <div class="create-new-post">
+        <h2>
+            <p>Share Your Thoughts with your audience</p>
+            <button> <img src="/images/addPost.png"> Create new post</button>
+        </h2>
+        <form action="/admin/post/blog" method="post">
+            <input type="text" name="title" placeholder="Enter a title...">
+            <hr>
+            <textarea name="description" placeholder="Share your story with us"></textarea>
+            <button>Post</button>
+        </form>
+    </div>
+
+    <script src="/scripts/hamburg.js"></script>
+    
+</body>
+</html>

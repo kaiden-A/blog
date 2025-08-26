@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog Page</title>
+    <link rel="stylesheet" href="/styles/home.css">
+</head>
+<body>
+    
+    <div class="profile">
+        <img>
+        <p>Kaiden-A</p>
+        <button onclick="location.href='#'">visit profile</button>
+    </div>
+    <div >
+
+        <header>
+            <h2>The End Path</h2>
+        </header>
+        <div class="content">
+
+            <% if(blogs.length > 0){ %>
+
+                <% blogs.forEach(blog => { %>
+
+                    <%  
+                        const date = new Date(blog.updatedAt);
+
+                        const options = { year: 'numeric', month: 'long', day: '2-digit' };
+                        const formattedDate = date.toLocaleDateString('en-US', options); 
+                    %>
+
+                    <div>
+                        <h3><%= blog.title %></h3>
+                        <p><%= formattedDate %></p>
+
+                        <p class="story"><%= blog.description %></p>
+                        <div>
+                            <a href="/<%= blog._id %>#comments"><%= blog.comments.length %> comments</a>
+                            <a href="/<%= blog._id %>">READ MORE ></a>
+                        </div>
+                    </div>
+
+                <% }) %>
+
+            <% } %>
+
+        </div>
+    </div>
+
+</body>
+</html>

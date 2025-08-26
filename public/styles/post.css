@@ -1,0 +1,120 @@
+/* Full-width Create New Post Section */
+.create-new-post {
+    width: 100%;
+    padding: 2rem;
+}
+
+.create-new-post h2 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+    color: var(--dark-blue);
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.create-new-post h2 p {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #666;
+}
+
+.create-new-post h2 button {
+    display: flex;
+    align-items: center;
+    background: var(--primary-blue);
+    color: var(--text-light);
+    border: none;
+    padding: 0.6rem 1.2rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: background 0.2s;
+}
+
+.create-new-post h2 button img {
+    width: 18px;
+    height: 18px;
+    margin-right: 8px;
+    filter: invert(1);
+}
+
+.create-new-post h2 button:hover {
+    background: var(--dark-blue);
+}
+
+.create-new-post form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.create-new-post input[name="title"] {
+    padding: 1rem;
+    border: 1px solid var(--gray-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--gray-light);
+}
+
+.create-new-post input[name="title"]:focus {
+    outline: none;
+    border-color: var(--secondary-blue);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(42, 112, 195, 0.15);
+}
+
+/* Description Textarea */
+.create-new-post textarea[name="description"] {
+    min-height: 50vh;
+    padding: 1rem;
+    border: 1px solid var(--gray-border);
+    border-radius: 6px;
+    font-size: 1rem;
+    background: var(--gray-light);
+    resize: vertical; /* user can resize if needed */
+}
+
+.create-new-post textarea[name="description"]:focus {
+    outline: none;
+    border-color: var(--secondary-blue);
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(42, 112, 195, 0.15);
+}
+
+.create-new-post form button {
+    background: var(--secondary-blue);
+    color: var(--text-light);
+    border: none;
+    padding: 0.9rem 1.2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+    align-self: flex-start;
+}
+
+.create-new-post form button:hover {
+    background: var(--dark-blue);
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+    .create-new-post h2 {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.8rem;
+    }
+
+    .create-new-post h2 button {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .create-new-post form button {
+        width: 100%;
+    }
+}

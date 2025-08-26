@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= blog.title %></title>
+    <link rel="stylesheet" href="/styles/dashboard.css">
+    <link rel="stylesheet" href="/styles/adminBlog.css">
+
+</head>
+<body>
+
+    <%- include('./partials/navigator.ejs') %>
+
+    <div class="blog-content">
+        <input type="text" value="<%= blog.title %>" id="title">
+
+        <hr>
+        <textarea name="description" id="description"> <%= blog.description %></textarea>
+
+        <div class="btn">
+           <button id="update">Update</button> <button id="delete">Delete</button> 
+        </div>
+    </div>
+
+
+
+    <script src="/scripts/hamburg.js"></script>
+
+    <script src="/scripts/updateAndDelete.js"></script>
+    
+</body>
+</html>

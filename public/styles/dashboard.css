@@ -1,0 +1,312 @@
+/* CSS Variables for Blue Color Palette */
+:root {
+    --primary-blue: #2c5aa0;
+    --secondary-blue: #3a6fc3;
+    --light-blue: #e6f0ff;
+    --dark-blue: #1a3c6e;
+    --text-dark: #333;
+    --text-light: #fff;
+    --gray-light: #f5f7f9;
+    --gray-border: #e1e5eb;
+    --shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    background-color: #f9fafb;
+    color: var(--text-dark);
+    display: flex;
+    min-height: 100vh;
+}
+
+/* Controller/Sidebar Styles */
+.controller {
+    width: 260px;
+    background: var(--primary-blue);
+    color: var(--text-light);
+    padding: 1.5rem 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    box-shadow: var(--shadow);
+    z-index: 100;
+}
+
+.controller .logo-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.controller .logo-container img {
+    width: 40px;
+    height: 40px;
+    background-color: var(--text-light);
+    border-radius: 8px;
+    margin-right: 10px;
+}
+
+.controller .logo-container p {
+    font-size: 0.8rem;
+    opacity: 0.7;
+}
+
+.navigation p {
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    opacity: 0.7;
+    letter-spacing: 0.5px;
+}
+
+.navigation ul {
+    list-style: none;
+}
+
+.navigation li {
+    margin-bottom: 0.5rem;
+    border-radius: 6px;
+    transition: all 0.2s;
+}
+
+.navigation li:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.navigation a {
+    display: flex;
+    align-items: center;
+    padding: 0.8rem 1rem;
+    color: var(--text-light);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    filter: invert(1);
+}
+
+/* Content Area Styles */
+.content {
+    flex: 1;
+    padding: 2rem;
+    overflow-y: auto;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.header h1 {
+    color: var(--dark-blue);
+    font-weight: 600;
+}
+
+.profile {
+    display: flex;
+    align-items: center;
+}
+
+.profile p {
+    margin-right: 1rem;
+    color: var(--dark-blue);
+}
+
+.profile img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background-color: var(--light-blue);
+    border: 2px solid var(--secondary-blue);
+}
+
+hr {
+    border: none;
+    height: 1px;
+    background-color: var(--gray-border);
+    margin: 1.5rem 0;
+}
+
+/* Blog Grid Styles */
+.blog {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+}
+
+.blog-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: var(--shadow);
+    transition: transform 0.2s, box-shadow 0.2s;
+    border-top: 4px solid var(--secondary-blue);
+    max-height: 60vh;
+}
+
+/* Blog Preview inside cards */
+.blog-preview {
+    overflow: hidden;
+    margin-bottom: 20px;
+    max-height: 30vh;
+    overflow-y: auto;
+}
+
+.blog-preview p {
+    white-space: pre-wrap;
+}
+
+.title-preview {
+    overflow: hidden;
+    max-height: 10vh;
+}
+
+
+.blog-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.blog-card h3 {
+    color: var(--dark-blue);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+}
+
+.blog-card > p:first-of-type {
+    color: #666;
+    font-size: 0.85rem;
+    margin-bottom: 1rem;
+}
+
+.blog-card > p:last-of-type {
+    margin-bottom: 1.5rem;
+    line-height: 1.5;
+}
+
+.blog-card div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.blog-card a {
+    color: var(--secondary-blue);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.blog-card a:last-child:hover {
+    text-decoration: underline;
+}
+
+/* Non-blog State */
+.non-blog {
+    text-align: center;
+    padding: 3rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: var(--shadow);
+    grid-column: 1 / -1;
+}
+
+.non-blog p {
+    margin-bottom: 1.5rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.non-blog button {
+    background: var(--primary-blue);
+    color: white;
+    border: none;
+    padding: 0.8rem 1.5rem;
+    border-radius: 6px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background 0.2s;
+}
+
+.non-blog button:hover {
+    background: var(--dark-blue);
+}
+
+/* Hamburger Menu */
+.hamburger {
+    display: none;
+    position: fixed;
+    top: 1rem;
+    left: 1rem;
+    z-index: 200;
+    background: var(--primary-blue);
+    border: none;
+    border-radius: 4px;
+    width: 40px;
+    height: 40px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 24px;
+    height: 2px;
+    background: white;
+    margin: 2px 0;
+    transition: all 0.3s ease;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .controller {
+        position: fixed;
+        left: -260px;
+        height: 100vh;
+    }
+    
+    .controller.active {
+        left: 0;
+    }
+    
+    .hamburger {
+        display: flex;
+    }
+    
+    .content {
+        padding: 1rem;
+        padding-top: 4rem;
+    }
+    
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .profile {
+        margin-top: 1rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .blog {
+        grid-template-columns: 1fr;
+    }
+}
