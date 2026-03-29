@@ -34,7 +34,7 @@ export const post_signIn = async (req , res) => {
 
         const token  = createToken(user._id);
 
-        res.cookie('jwt' , token , {httpOnly: true , maxAge : maxAge * 1000})
+        res.cookie('jwt' , token , {maxAge : maxAge * 1000})
         res.json({success : `Succesfully sign in ! Hello ${user.username}`});
 
     }catch(err){
@@ -78,7 +78,7 @@ export const post_signUp = async (req , res) => {
 
         const token = createToken(savedUser._id);
 
-        res.cookie('jwt' , token , {httpOnly: true , maxAge : maxAge * 1000 })
+        res.cookie('jwt' , token , {maxAge : maxAge * 1000 })
         res.json({success : "succesfully add to the database"})
 
 

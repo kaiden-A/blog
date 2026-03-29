@@ -32,12 +32,12 @@
                     %>
 
                     <div>
-                        <h3><%= blog.title %></h3>
+                        <h3><%- blog.title %></h3>
                         <p><%= formattedDate %></p>
 
-                        <p class="story"><%= blog.description %></p>
+                        <p class="story"><%- blog.description %></p>
                         <div>
-                            <a href="/<%= blog._id %>#comments"><%= blog.comments.length %> comments</a>
+                            <a href="/<%= blog._id %>#comments"><%- blog.comments.length %> comments</a>
                             <a href="/<%= blog._id %>">READ MORE ></a>
                         </div>
                     </div>

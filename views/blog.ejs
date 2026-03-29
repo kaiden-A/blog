@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= blog.title %></title>
+  <title><%- blog.title %></title>
     <link rel="stylesheet" href="/styles/blog.css">
 </head>
 <body>
@@ -13,8 +13,8 @@
   </header>
 
   <div class="blog-container">
-    <h3><%= blog.title %></h3>
-    <p><%= blog.description %></p>
+    <h3><%- blog.title %></h3>
+    <p><%- blog.description %></p>
     <hr>
 
     <div id="comments">
@@ -26,9 +26,9 @@
             const formattedDate = date.toLocaleDateString('en-US', options);
           %>
           <div class="comment">
-            <p class="comment-author"><%= comment.author %></p>
-            <p class="comment-date"><%= formattedDate %></p>
-            <p class="comment-text"><%= comment.text %></p>
+            <p class="comment-author"><%- comment.author %></p>
+            <p class="comment-date"><%- formattedDate %></p>
+            <p class="comment-text"><%- comment.text %></p>
             <a href="#">REPLY</a>
           </div>
         <% }) %>
